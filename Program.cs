@@ -7,11 +7,7 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            //Detta vill jag göra: 
-            //1. Gör en uträkning
-            //2. Välj mellan att se tidigare uträkning eller göra en ny uträkning.....
-            // ...skriv hela programmet med pseudokod för att styra upp. 
-
+           
             int start = 0;
             bool fortsatt = true;
 
@@ -27,8 +23,6 @@ namespace Calculator
             Console.WriteLine("Tryck 1 för att börja räkna.");
             start = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
-
-            // Vart ska jag ha en bool???
 
             List<string> calculations = new List<string>(); // Min tomma lista
 
@@ -51,7 +45,7 @@ namespace Calculator
                 int multiplikation = tal1 * tal2;
                 double division = (double)tal1 / tal2;
 
-                if (choice == '+') // Varje if-sats är en metod, dessa ligger nedanför. Gör hela if-satsen till en metod?
+                if (choice == '+') // Varje if-sats är en metod, dessa ligger nedanför. 
                 {
                     MethodPlus();
                 }
@@ -72,7 +66,7 @@ namespace Calculator
                 Console.WriteLine("För att se en sammanställning på dina tidigare uträkningar tryck: 2");
                 start = Convert.ToInt32(Console.ReadLine());
 
-                // Lägg även denna if-sats i do while loopen ändra till en bool någonstans.
+                
                 if (start == 2) // Om användaren väljer 2 skickas man till denna if-sats
                 {
                     fortsatt = false;
@@ -99,7 +93,7 @@ namespace Calculator
                     string nr1 = tal1.ToString(); // Konverterar till string
                     string nr2 = tal2.ToString();
                     string userChoice = choice.ToString();
-                    string result = addition.ToString(); // Denna behövs inte...för att? Konverteras den till string för att den skrivs ut i en textsträng ovan?
+                    string result = addition.ToString(); 
                     string calculation = nr1 + userChoice + nr2 + "=" + result; // Konverterar hela uträkningen till en string
                     calculations.Add(calculation); // Lägger till min textsträng i min lista
                     Console.WriteLine();
@@ -112,7 +106,7 @@ namespace Calculator
                     string nr2 = tal2.ToString();
                     string userChoice = choice.ToString();
                     string result = subtraktion.ToString();
-                    string calculation = nr1 + userChoice + nr2 + "=" + subtraktion;
+                    string calculation = nr1 + userChoice + nr2 + "=" + result;
                     calculations.Add(calculation);
                     Console.WriteLine();
                 }
@@ -124,7 +118,7 @@ namespace Calculator
                     string nr2 = tal2.ToString();
                     string userChoice = choice.ToString();
                     string result = multiplikation.ToString();
-                    string calculation = nr1 + userChoice + nr2 + "=" + multiplikation;
+                    string calculation = nr1 + userChoice + nr2 + "=" + result;
                     calculations.Add(calculation);
                     Console.WriteLine();
                 }
@@ -136,12 +130,12 @@ namespace Calculator
                     string nr2 = tal2.ToString();
                     string userChoice = choice.ToString();
                     string result = division.ToString();
-                    string calculation = nr1 + userChoice + nr2 + "=" + division;
+                    string calculation = nr1 + userChoice + nr2 + "=" + result;
                     calculations.Add(calculation);
                     Console.WriteLine();
                 }
 
-            } while (fortsatt); // Detta villkoret uppfylls när användaren trycker 1. 
+            } while (fortsatt); 
 
            
 
