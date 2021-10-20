@@ -11,7 +11,6 @@ namespace Calculator
             int start = 0;
             bool loop = true;
 
-            // Gör om hela detta stycket till en metod? 
             Console.WriteLine("Välkommen till Miniräknaren!");
             Console.WriteLine();
             Console.Write("Skriv in ditt namn: ");
