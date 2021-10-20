@@ -13,6 +13,8 @@ namespace Calculator
             // ...skriv hela programmet med pseudokod för att styra upp. 
 
             int start = 0;
+            bool fortsatt = true;
+
 
             // Gör om hela detta stycket till en metod? 
             Console.WriteLine("Välkommen till Miniräknaren!");
@@ -70,6 +72,25 @@ namespace Calculator
                 Console.WriteLine("För att se en sammanställning på dina tidigare uträkningar tryck: 2");
                 start = Convert.ToInt32(Console.ReadLine());
 
+                // Lägg även denna if-sats i do while loopen ändra till en bool någonstans.
+                if (start == 2) // Om användaren väljer 2 skickas man till denna if-sats
+                {
+                    fortsatt = false;
+                    PreviousCalculations();
+                }
+
+                // Metod
+                void PreviousCalculations()
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Tidigare uträkningar: ");
+                    foreach (string item in calculations)
+                    {
+                        Console.WriteLine(item);
+                    }
+                    Console.WriteLine("Nu är det färdigräknat för idag, bra jobbat! :) "); // Hade varit kul att kunna välja att börja räkna igen här
+                }
+
                 // Metoder
 
                 void MethodPlus()
@@ -79,7 +100,7 @@ namespace Calculator
                     string nr2 = tal2.ToString();
                     string userChoice = choice.ToString();
                     string result = addition.ToString(); // Denna behövs inte...för att? Konverteras den till string för att den skrivs ut i en textsträng ovan?
-                    string calculation = nr1 + userChoice + nr2 + "=" + addition; // Konverterar hela uträkningen till en string
+                    string calculation = nr1 + userChoice + nr2 + "=" + result; // Konverterar hela uträkningen till en string
                     calculations.Add(calculation); // Lägger till min textsträng i min lista
                     Console.WriteLine();
                 }
@@ -120,25 +141,9 @@ namespace Calculator
                     Console.WriteLine();
                 }
 
-            } while (start == 1); // Detta villkoret uppfylls när användaren trycker 1. 
+            } while (fortsatt); // Detta villkoret uppfylls när användaren trycker 1. 
 
-            // Lägg även denna if-sats i do while loopen ändra till en bool någonstans.
-            if (start == 2) // Om användaren väljer 2 skickas man till denna if-sats
-            {
-                PreviousCalculations();
-            }
-
-            // Metod
-            void PreviousCalculations()
-            {
-                Console.WriteLine();
-                Console.WriteLine("Tidigare uträkningar: ");
-                foreach (string item in calculations)
-                {
-                    Console.WriteLine(item);
-                }
-                Console.WriteLine("Nu är det färdigräknat för idag, bra jobbat! :) "); // Hade varit kul att kunna välja att börja räkna igen här
-            }
+           
 
             // Slut.
         }
