@@ -140,7 +140,6 @@ namespace Calculator
                 Console.WriteLine("Nu är det färdigräknat för idag, bra jobbat! :) "); // Hade varit kul att kunna välja att börja räkna igen här
             }
 
-
             // Slut.
         }
     }
