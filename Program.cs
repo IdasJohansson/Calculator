@@ -7,12 +7,10 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-           
+
             int start = 0;
-            bool fortsatt = true;
+            bool loop = true;
 
-
-            // Gör om hela detta stycket till en metod? 
             Console.WriteLine("Välkommen till Miniräknaren!");
             Console.WriteLine();
             Console.Write("Skriv in ditt namn: ");
@@ -64,14 +62,19 @@ namespace Calculator
 
                 Console.WriteLine("För att fortsätta räkna tryck: 1");
                 Console.WriteLine("För att se en sammanställning på dina tidigare uträkningar tryck: 2");
+                Console.WriteLine("För att avsluta tryck: 3");
                 start = Convert.ToInt32(Console.ReadLine());
 
-                
                 if (start == 2) // Om användaren väljer 2 skickas man till denna if-sats
                 {
-                    fortsatt = false;
                     PreviousCalculations();
                 }
+
+                if (start == 3) // Om användaren väljer 3 skickas man till denna if-sats
+                {
+                    loop = false; // Denna avbryter while-loopen
+                    Console.WriteLine("Nu är det färdigräknat för idag, bra jobbat! :) ");
+                }    
 
                 // Metod
                 void PreviousCalculations()
@@ -82,10 +85,10 @@ namespace Calculator
                     {
                         Console.WriteLine(item);
                     }
-                    Console.WriteLine("Nu är det färdigräknat för idag, bra jobbat! :) "); // Hade varit kul att kunna välja att börja räkna igen här
                 }
 
-                // Metoder
+
+                // Metoder till första if-satsen
 
                 void MethodPlus()
                 {
@@ -135,11 +138,7 @@ namespace Calculator
                     Console.WriteLine();
                 }
 
-            } while (fortsatt); 
-
-           
-
-            // Slut.
+            } while (loop); 
         }
     }
 }
